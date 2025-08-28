@@ -14,6 +14,33 @@ html, body {
  @keyframes swim {
    to { transform: translateX(-50%); }
  }
+#message {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 24px;
+  border-radius: 16px 16px 0 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+#message.show {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
  #message {
    display: none;
    position: absolute;
@@ -43,6 +70,7 @@ html, body {
    color: #272B34;
  }
 #message img {
+  width: 72px;
   width: 64px;
 }
  #message button {
